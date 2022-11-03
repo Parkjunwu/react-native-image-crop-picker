@@ -21,6 +21,7 @@ import android.webkit.MimeTypeMap;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Callback;
@@ -762,7 +763,8 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
             uCrop.withAspectRatio(width, height);
         }
 
-        uCrop.start(activity);
+        // uCrop.start(activity);
+        uCrop.start(activity, UCrop.REQUEST_CROP);
     }
 
     private void imagePickerResult(Activity activity, final int requestCode, final int resultCode, final Intent data) {
